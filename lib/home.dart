@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:latihan_flutter/detail.dart";
 import "./explore.dart";
 
 class HomePage extends StatelessWidget {
@@ -6,7 +7,8 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-          padding: const EdgeInsets.all(30),
+          padding:
+              const EdgeInsets.only(top: 35, left: 20, right: 20, bottom: 20),
           child: Column(
             children: [
               const Row(
@@ -49,10 +51,16 @@ class HomePage extends StatelessWidget {
                         fillColor: const Color(0xffeaeae8)),
                   )),
                   const SizedBox(
-                    width: 20,
+                    width: 10,
                   ),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => DetailPage(),
+                          ));
+                    },
                     child: const Icon(Icons.search),
                     style: ButtonStyle(
                       backgroundColor:
@@ -60,8 +68,8 @@ class HomePage extends StatelessWidget {
                       iconSize: const MaterialStatePropertyAll(30),
                       shape: MaterialStateProperty.all(RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
-                      padding:
-                          const MaterialStatePropertyAll(EdgeInsets.all(17)),
+                      padding: const MaterialStatePropertyAll(EdgeInsets.only(
+                          top: 15, bottom: 15, left: 10, right: 10)),
                     ),
                   )
                 ],
@@ -92,7 +100,7 @@ class HomePage extends StatelessWidget {
                             child: const Icon(Icons.my_library_music_rounded),
                             style: const ButtonStyle(
                                 padding: MaterialStatePropertyAll(
-                                    EdgeInsets.all(20)),
+                                    EdgeInsets.all(15)),
                                 iconColor:
                                     MaterialStatePropertyAll(Color(0xff1aa0b9)),
                                 backgroundColor:
@@ -117,7 +125,7 @@ class HomePage extends StatelessWidget {
                             child: const Icon(Icons.home_max_outlined),
                             style: const ButtonStyle(
                                 padding: MaterialStatePropertyAll(
-                                    EdgeInsets.all(20)),
+                                    EdgeInsets.all(15)),
                                 iconColor:
                                     MaterialStatePropertyAll(Color(0xff1aa0b9)),
                                 backgroundColor:
@@ -142,7 +150,7 @@ class HomePage extends StatelessWidget {
                             child: const Icon(Icons.games),
                             style: const ButtonStyle(
                                 padding: MaterialStatePropertyAll(
-                                    EdgeInsets.all(20)),
+                                    EdgeInsets.all(15)),
                                 iconColor:
                                     MaterialStatePropertyAll(Color(0xff1aa0b9)),
                                 backgroundColor:
@@ -167,7 +175,7 @@ class HomePage extends StatelessWidget {
                             child: const Icon(Icons.install_mobile_outlined),
                             style: const ButtonStyle(
                                 padding: MaterialStatePropertyAll(
-                                    EdgeInsets.all(20)),
+                                    EdgeInsets.all(15)),
                                 iconColor:
                                     MaterialStatePropertyAll(Color(0xff1aa0b9)),
                                 backgroundColor:
@@ -200,7 +208,7 @@ class HomePage extends StatelessWidget {
                             child: const Icon(Icons.tv),
                             style: const ButtonStyle(
                                 padding: MaterialStatePropertyAll(
-                                    EdgeInsets.all(20)),
+                                    EdgeInsets.all(15)),
                                 iconColor:
                                     MaterialStatePropertyAll(Color(0xff1aa0b9)),
                                 backgroundColor:
@@ -225,7 +233,7 @@ class HomePage extends StatelessWidget {
                             child: const Icon(Icons.cut),
                             style: const ButtonStyle(
                                 padding: MaterialStatePropertyAll(
-                                    EdgeInsets.all(20)),
+                                    EdgeInsets.all(15)),
                                 iconColor:
                                     MaterialStatePropertyAll(Color(0xff1aa0b9)),
                                 backgroundColor:
@@ -250,7 +258,7 @@ class HomePage extends StatelessWidget {
                             child: const Icon(Icons.dry_cleaning_rounded),
                             style: const ButtonStyle(
                                 padding: MaterialStatePropertyAll(
-                                    EdgeInsets.all(20)),
+                                    EdgeInsets.all(15)),
                                 iconColor:
                                     MaterialStatePropertyAll(Color(0xff1aa0b9)),
                                 backgroundColor:
@@ -275,7 +283,7 @@ class HomePage extends StatelessWidget {
                             child: const Icon(Icons.book),
                             style: const ButtonStyle(
                                 padding: MaterialStatePropertyAll(
-                                    EdgeInsets.all(20)),
+                                    EdgeInsets.all(15)),
                                 iconColor:
                                     MaterialStatePropertyAll(Color(0xff1aa0b9)),
                                 backgroundColor:
@@ -338,8 +346,8 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                           color: const Color(0xff1aa0b9),
                         ),
-                        width: 130,
-                        height: 130,
+                        width: 100,
+                        height: 100,
                       ),
                       const SizedBox(
                         height: 10,
@@ -354,8 +362,8 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                           color: const Color(0xff1aa0b9),
                         ),
-                        width: 130,
-                        height: 130,
+                        width: 100,
+                        height: 100,
                       ),
                       const SizedBox(
                         height: 10,
@@ -370,8 +378,8 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                           color: const Color(0xff1aa0b9),
                         ),
-                        width: 130,
-                        height: 130,
+                        width: 100,
+                        height: 100,
                       ),
                       const SizedBox(
                         height: 10,
