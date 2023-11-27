@@ -14,44 +14,52 @@
 //   }
 // }
 
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(
-            title: Text("Hello"),
-          ),
-          body: Center(child: MyWidget()),
-        ));
-  }
+  runApp(MyWidget());
 }
 
 class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        onPressed: () {
-          showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    titleTextStyle: TextStyle(backgroundColor: Colors.red),
-                    title: Text("Hello World"),
-                    content: Text("wef"),
-                    actions: [
-                      ElevatedButton(onPressed: () {}, child: Text("Close"))
-                    ],
-                  ));
-        },
-        child: Text("Show Dialog"));
+    return MaterialApp(
+      home: Home(),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: const Text(
+                  "hello",
+                  style: TextStyle(
+                    color: Colors.red,
+                    backgroundColor: Colors.yellow,
+                  ),
+                ),
+                width: MediaQuery.of(context).size.width * 0.65,
+                behavior: SnackBarBehavior.floating,
+                action: SnackBarAction(
+                  label: "cancel",
+                  onPressed: () {
+                    print("hello");
+                  },
+                ),
+                backgroundColor: Colors.blue,
+              ),
+            );
+          },
+          child: Text("Show Snakbar"),
+        ),
+      ),
+    );
   }
 }
